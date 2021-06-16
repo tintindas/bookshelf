@@ -1,0 +1,30 @@
+{
+	"name": "bookshelf",
+	"description": "List of books I have read and intend to read.",
+	"version": "1.0.0",
+	"main": "index.js",
+	"dependencies": {
+		"axios": "^0.21.1",
+		"octokit": "^1.0.6"
+	},
+	"devDependencies": {
+		"typescript": "^4.3.2"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tintindas/bookshelf.git"
+	},
+	"keywords": [
+		"books",
+		"readme"
+	],
+	"author": "tintindas",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/tintindas/bookshelf/issues"
+	},
+	"homepage": "https://github.com/tintindas/bookshelf#readme"
+}

@@ -1,19 +1,13 @@
 import axios from 'axios'
 import Book from './interfaces/Book'
+import { formatString, cleanCategories } from './utils'
+
 interface SearchResponse {
 	items: Array<{ id: string }>
 }
 
 interface VolumeInfo {
 	volumeInfo: Book
-}
-
-const formatString = (str: string): string => {
-	if (str === '') {
-		throw Error('Empty input string')
-	}
-
-	return str.split(' ').join('+')
 }
 
 const getBook = async (title: string, author: string): Promise<Book> => {
@@ -49,6 +43,8 @@ const getBook = async (title: string, author: string): Promise<Book> => {
 		categories
 	} = bookData.volumeInfo
 
+	const cleanedCategories = cleanCategories(categories)
+
 	const book: Book = {
 		title: bookTitle,
 		authors,
@@ -56,14 +52,13 @@ const getBook = async (title: string, author: string): Promise<Book> => {
 		pageCount,
 		imageLinks,
 		description,
-		categories
+		categories: cleanedCategories
 	}
 
 	return book
 }
 
 export { formatString, getBook }
-
 // ;(async () => {
 // 	console.log(await getBook('The Last Wish', 'Andrzej Sapkowski'))
 // })()

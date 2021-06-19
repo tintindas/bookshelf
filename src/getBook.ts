@@ -58,7 +58,7 @@ const getBook = async (title: string, author: string): Promise<Book> => {
 	return book
 }
 
-export { formatString, getBook }
+export { getBook }
 // ;(async () => {
 // 	console.log(await getBook('The Last Wish', 'Andrzej Sapkowski'))
 // })()

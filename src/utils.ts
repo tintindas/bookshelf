@@ -23,4 +23,12 @@ const getFilePath = (year: string): string => {
 	return filePath
 }
 
-export { formatString, cleanCategories, getFilePath }
+const parseRequest = (req: string) => {
+	const parsedRequest = req.split('\n').map((item) => {
+		return item.split(':')[1].trim()
+	})
+
+	return parsedRequest
+}
+
+export { formatString, cleanCategories, getFilePath, parseRequest }

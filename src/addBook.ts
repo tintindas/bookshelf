@@ -2,8 +2,8 @@ import fs from 'fs/promises'
 import Book from './interfaces/Book'
 import { getFilePath } from './utils'
 
-const addBook = async (book: Book) => {
-	const filePath = getFilePath('2021')
+const addBook = async (book: Book, year: string) => {
+	const filePath = getFilePath(year)
 
 	const fileData = await fs
 		.readFile(filePath, { encoding: 'utf8' })

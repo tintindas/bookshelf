@@ -27,6 +27,6 @@ jobs:
         env:
           ISSUE_TITLE: ${{ github.event.issue.body }}
         run: |
-          echo ${{ github.event.issue.body }}
-          echo ${{ github.event.issue.title }}
+          echo "${{ github.event.issue.body }}"
+          echo "${{ github.event.issue.title }}"
           

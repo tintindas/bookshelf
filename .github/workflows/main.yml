@@ -9,7 +9,7 @@ jobs:
   addBook:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest     
-    if: startsWith(github.event.issue.title, 'addBook|')
+    if: startsWith(github.event.issue.title, 'addBook')
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access
       - uses: actions/checkout@v2
@@ -25,8 +25,5 @@ jobs:
         
       - name: Add Book 
         env:
-          ISSUE_TITLE: ${{ github.event.issue.body }}
-        run: |
-          echo "${{ github.event.issue.body }}"
-          echo "${{ github.event.issue.title }}"
-          
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: npm run add
